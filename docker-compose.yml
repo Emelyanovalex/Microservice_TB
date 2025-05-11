@@ -1,0 +1,9 @@
+version: "3.8"
+
+services:
+  thingsboard-client:
+    build: .
+    container_name: thingsboard_client
+    env_file:
+      - .env
+    restart: unless-stopped
