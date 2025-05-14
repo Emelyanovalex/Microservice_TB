@@ -1,9 +1,11 @@
 version: "3.8"
 
 services:
-  thingsboard-client:
+  thingsboard-api:
     build: .
-    container_name: thingsboard_client
+    container_name: thingsboard_api
     env_file:
       - .env
+    ports:
+      - "4321:4321"
     restart: unless-stopped

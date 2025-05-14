@@ -34,7 +34,7 @@ class TbDevice:
         self.headers = headers
         self.device_id = device_data['id']['id']
 
-    def get_telemetry(self):
+    def get_data(self):
         url = f"{self.base_url}/api/plugins/telemetry/DEVICE/{self.device_id}/values/timeseries"
         response = requests.get(url, headers=self.headers)
         response.raise_for_status()

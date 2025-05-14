@@ -5,6 +5,6 @@ WORKDIR /app
 COPY . .
 
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir requests python-dotenv
+    pip install --no-cache-dir fastapi uvicorn python-dotenv requests
 
-CMD ["python", "main.py"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "4321"]
