@@ -1,10 +1,9 @@
-version: "3.8"
-
 services:
-  thingsboard-api:
+  macroscop_proxy:
+    image: macroscop
+    container_name: macroscop
     build: .
-    container_name: thingsboard_api
-    env_file:
-      - .env
     ports:
       - "4321:4321"
+    env_file:
+      - .env
